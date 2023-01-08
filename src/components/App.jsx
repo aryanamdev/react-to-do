@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import Button from "./Button";
+import Heading from "./Heading";
+import Input from "./Input";
 import TodoItem from "./TodoItem";
 
 function App() {
@@ -23,14 +26,10 @@ function App() {
 
   return (
     <div className="container">
-      <div className="heading">
-        <h1>To-Do List</h1>
-      </div>
+      <Heading text="To-Do List" />
       <div className="form">
-        <input onChange={handleChange} type="text" value={input} />
-        <button onClick={addItems}>
-          <span>Add</span>
-        </button>
+        <Input function={handleChange} type="text" value={input} />
+        <Button function={addItems} />
       </div>
       <div className="items-container">
         <ul>
